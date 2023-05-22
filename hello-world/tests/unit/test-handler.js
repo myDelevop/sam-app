@@ -1,4 +1,4 @@
-/*'use strict';
+'use strict';
 
 const app = require('../../app.js');
 const chai = require('chai');
@@ -20,4 +20,3 @@ describe('Tests index', function () {
         // expect(response.location).to.be.an("string");
     });
 });
-*/
