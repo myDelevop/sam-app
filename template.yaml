@@ -18,6 +18,9 @@ Resources:
       CodeUri: hello-world/
       Handler: app.lambdaHandler
       Runtime: nodejs16.x
+      AutoPublishAlias: live
+      DeploymentPreference:
+        Type: Canary10Percent5Minutes
       Architectures:
       - x86_64
       Events:
