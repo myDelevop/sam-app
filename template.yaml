@@ -16,7 +16,7 @@ Resources:
   apiLambdaFunctionGET:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: app.lambda_handler
+      Handler: app-gateway.lambda_handler
       Runtime: python3.9
       CodeUri: src/
       Description: A simple lambda function that returns a message

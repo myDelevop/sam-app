@@ -7,16 +7,16 @@ Resources:
     Properties:
       Handler: app.lambda_handler
       Runtime: python3.9
-      CodeUri: s3://sam-scratch-caliandro-eu-west-1/c4181e8618a587f2cba0290852d69835
+      CodeUri: s3://sam-scratch-caliandro-eu-west-1/a173b132d9fe932bb28706fa8246e41d
       Description: A simple lambda function that returns a message
       MemorySize: 128
       Timeout: 3
   apiLambdaFunctionGET:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: app.lambda_handler
+      Handler: app-gateway.lambda_handler
       Runtime: python3.9
-      CodeUri: s3://sam-scratch-caliandro-eu-west-1/c4181e8618a587f2cba0290852d69835
+      CodeUri: s3://sam-scratch-caliandro-eu-west-1/a173b132d9fe932bb28706fa8246e41d
       Description: A simple lambda function that returns a message
       MemorySize: 128
       Timeout: 3
