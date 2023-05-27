@@ -7,7 +7,22 @@ Resources:
     Properties:
       Handler: app.lambda_handler
       Runtime: python3.9
-      CodeUri: s3://sam-scratch-caliandro-eu-west-1/938fc2b5e66f63e40a9f9787ee59af77
+      CodeUri: s3://sam-scratch-caliandro-eu-west-1/c4181e8618a587f2cba0290852d69835
       Description: A simple lambda function that returns a message
       MemorySize: 128
       Timeout: 3
+  apiLambdaFunctionGET:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      CodeUri: s3://sam-scratch-caliandro-eu-west-1/c4181e8618a587f2cba0290852d69835
+      Description: A simple lambda function that returns a message
+      MemorySize: 128
+      Timeout: 3
+      Events:
+        HelloWorldSAMAPI:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET

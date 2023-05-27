@@ -12,3 +12,19 @@ Resources:
       Description: A simple lambda function that returns a message
       MemorySize: 128
       Timeout: 3
+
+  apiLambdaFunctionGET:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      CodeUri: src/
+      Description: A simple lambda function that returns a message
+      MemorySize: 128
+      Timeout: 3
+      Events:
+        HelloWorldSAMAPI:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
