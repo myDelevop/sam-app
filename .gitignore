@@ -85,6 +85,8 @@ typings/
 # Optional REPL history
 .node_repl_history
 
+.vs
+
 # Output of 'npm pack'
 *.tgz
 
@@ -150,7 +152,8 @@ temp/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
