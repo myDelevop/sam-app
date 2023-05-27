@@ -15,6 +15,3 @@ Resources:
       Description: A simple lambda function that returns a message
       MemorySize: 128
       Timeout: 3
-      Policies: 
-        - SESSendBouncePolicy:
-          IdentityName: !Ref IdentityNameParameter
