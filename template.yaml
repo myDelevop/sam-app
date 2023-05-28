@@ -28,3 +28,38 @@ Resources:
           Properties:
             Path: /hello
             Method: GET
+
+  dynamoDBLambdaFunctionGET:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: app-dynamodb.lambda_handler
+      Runtime: python3.9
+      CodeUri: src/
+      Description: A simple lambda function that returns a message
+      MemorySize: 128
+      Timeout: 3
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref Table
+          REGION_NAME: !Ref AWS::Region
+      Events:
+        HelloWorldSAMAPI:
+          Type: Api
+          Properties:
+            Path: /dynamodb
+            Method: GET
+      Policies: 
+      - DynamoDBCrudPolicy:
+          TableName: !Ref Table
+
+
+  Table:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: dynamoFromSAM
+      PrimaryKey:
+        Name: greeting
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
